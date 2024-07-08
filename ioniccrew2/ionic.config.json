@@ -1,0 +1,7 @@
+{
+  "name": "ioniccrew2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

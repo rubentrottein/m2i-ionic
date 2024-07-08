@@ -1,0 +1,14 @@
+.ios .title-large{
+    background: black;
+    color: royalblue;
+    font-weight: 100;
+}
+figure{
+    background: radial-gradient(whitesmoke, white);
+    border: 1px white solid;
+    backdrop-filter: blur(1px);
+    padding: 1em;
+    display: grid;
+    place-items: center;
+    border-radius: .5em;
+}
