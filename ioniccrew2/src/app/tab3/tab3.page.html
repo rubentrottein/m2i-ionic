@@ -14,18 +14,11 @@
   </ion-header>
   <article>
     <h2>User Page</h2>
-    <figure>
-      <figcaption class="element">
-        <img src="https://picsum.photos/id/177/200/200" alt="Image utilisateur">
-        <h4>Taylor Hunt</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ducimus impedit illo doloremque architecto nihil, est, ad odio tenetur asperiores nemo veniam alias cumque explicabo!</p>
-      </figcaption>
-    </figure>
-    <figure>
-      <figcaption class="element">
-        <img src="https://picsum.photos/id/310/200/200" alt="Image utilisateur">
-        <h4>Max Pliskine</h4>
-        <p>Lorem ipsum  doloremque architecto nihil, est, ad odio tenetur asperiores nemo veniam alias cumque explicabo!</p>
+    <figure *ngFor="let element of userTab">
+      <img src="https://picsum.photos/id/{{element.image}}/200/200" alt={{element.name}}>
+      <figcaption>
+        <h4>{{ element.name }}</h4>
+        <p>{{ element.description }}</p>
       </figcaption>
     </figure>
   </article>

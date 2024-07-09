@@ -3,3 +3,19 @@
     font-weight: 100;
     background: black;
 }
+figure{
+    border: darkgoldenrod 1px solid;
+    border-radius: 1em;
+    margin: 1em;
+    padding: .5em;
+}
+
+button{
+    position: fixed;
+    bottom: 0dvh;
+    left: 0;
+    width: 100%;
+    background: rebeccapurple;
+    color: white;
+    padding: 1em;
+}

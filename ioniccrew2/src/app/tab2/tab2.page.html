@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      JavaScript
+        JavaScript
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,10 +12,16 @@
       <ion-title size="large">Search a Pokemon!</ion-title>
     </ion-toolbar>
   </ion-header>
-  <article id="result">
+  <article>
+    <h2>Image Pokedex</h2>
+    <p>Choisissez un Pokémon dans la liste</p>
+    <select></select>
+    <h3>Ou</h3>
+    <p>Tapez le nom anglais d'un pokemon pour afficher son image</p>
+    
+    <input type="text" id="pkmn">
+    <button id="search">Search</button>
   </article>
-  <input type="text" id="pkmn">
-  <button id="search">Search</button>
-  <button id=""></button>
+  <article id="displayPkmn"></article>
   <app-explore-container name="Pokemon API (typeScript)"></app-explore-container>
 </ion-content>

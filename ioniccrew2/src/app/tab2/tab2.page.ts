@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { list } from '../models/PkmnList';
 
 @Component({
   selector: 'app-tab2',
@@ -13,8 +14,6 @@ export class Tab2Page {
 
   constructor() {}
 
-  
-  /**/
   ngOnInit(){
   const formatDate = (date : Date) =>
     `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')} ${String(
@@ -71,24 +70,47 @@ export class Tab2Page {
       }
       
     }
+    
+
     function createFigure(pkmn : String){
       let figure = document.createElement("figure");
       let figcaption = document.createElement("figcaption");
       let img = document.createElement("img");
       let title = document.createElement("h4");
+      let p = document.createElement("p");
       fetchPokemon(pkmn)
       .then((data) => {
+        console.log(data)
         img.src = data.image;
-        title.innerHTML = data.name;
-        figcaption.append(img, title);
+        title.innerHTML = "#" + data.number + " " + data.name;
+        figcaption.append(img, title, p);
         figure.append(figcaption);
-      }
-    )
+      })
     return figure
     }
+
     function getPkmn(pkmn : String){
-      document.querySelectorAll("#result")[0].append(createFigure(pkmn));
+      document.querySelectorAll("#displayPkmn")[0].append(createFigure(pkmn));
     }
+    
+    (function createPkmnList(){
+      const select = document.querySelectorAll("select")[0]
+      for(let pkmn of list){
+        fetchPokemon(pkmn.name)
+        .then((data) => {
+          let option = document.createElement("option")
+          option.value = pkmn.name;
+          option.innerHTML = pkmn.name;
+          select.append(option);
+        })
+      }
+      select.addEventListener("input", ()=>{
+        let searchBar = document.getElementById("pkmn") as HTMLInputElement;
+        console.log(searchBar.value);
+        searchBar.value = select.value
+        searchBar.innerHTML = select.value
+      })
+    })()
     document.querySelectorAll("#search")[0].addEventListener("click", ()=>{
       let searchBar = document.getElementById("pkmn") as HTMLInputElement;
       getPkmn(searchBar.value);

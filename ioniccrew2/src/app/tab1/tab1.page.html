@@ -12,10 +12,29 @@
       <ion-title size="large">Angular</ion-title>
     </ion-toolbar>
   </ion-header>
+  <h2>Exercices d'affichage</h2>
 
-  <div>{{testString}}</div>
-  <ion-item *ngFor="let element of testTab">
-    {{ element }}
-  </ion-item>
-  <app-explore-container name="Angular"></app-explore-container>
+  <article>
+    <h3>Affichage d'un simple texte</h3>
+    {{testString}}
+  </article>
+  
+  <article>
+    <h3>Premier caractère de Bonjour</h3>
+    <div>{{ first }}</div>
+  </article>
+  
+  <article >
+    <h3>Affichage d'un Array</h3>
+    <aside *ngFor="let element of testTab">
+      {{ element }}
+    </aside>
+  </article>
+  <article >
+    <h3>Affichage d'un Array Trié</h3>
+    <aside *ngFor="let elt of sortedTab">
+      {{ elt }}
+    </aside>
+  </article>
+  <app-explore-container name="Exos d'affichage (Angular)"></app-explore-container>
 </ion-content>

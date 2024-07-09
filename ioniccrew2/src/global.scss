@@ -37,21 +37,31 @@
 @import '@ionic/angular/css/palettes/dark.system.css';
 
 //General Style
+*{
+    text-decoration: none;
+}
+
+.ios .title-large{
+    position:fixed;
+    top:0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+    background: black;
+    color: white;
+}
+a{
+    color: royalblue;
+}
 .element img{
     border-radius: 1em;
 }
-#container{
-    color: rebeccapurple;
-    animation: vanish 2s 1 2s forwards;
-    background: #ffffff44;
-    padding: 1em;
-    width: 100dvw;
-    backdrop-filter: blur(5px);
-}
 
-@keyframes vanish {
-    to {
-        transform: translateX(100dvw);
-        opacity : 0;
-    }
+article{
+    width: 95%;
+    margin: auto;
+}
+code{
+    color: crimson;
+    margin: .1em;
 }

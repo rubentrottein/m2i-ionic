@@ -2,19 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 @Component({
   selector: 'app-ionic',
   templateUrl: './ionic.page.html',
   styleUrls: ['./ionic.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ExploreContainerComponent]
 })
 export class IonicPage implements OnInit {
 
-  constructor() { }
-
   ngOnInit() {
+    const result = document.querySelectorAll("#result")[0];
+    const fruits = ["Pomme", "Banane", "Mirabelle", "Coing"];
+    
     function alphabetical(tab : String[]){
       let p = document.createElement("p");
       for(let fruit of tab.sort()){
@@ -22,11 +24,10 @@ export class IonicPage implements OnInit {
       }
       return p;
     }
-    const fruits = ["Pomme", "Banane", "Mirabelle", "Coing"];
-    document.querySelectorAll("#result")[0].innerHTML += fruits.join( " - " );
-    document.querySelectorAll("#result")[0].append(alphabetical(fruits));
+
+    result.innerHTML += fruits.join( " - " );
     document.querySelectorAll("#activate")[0].addEventListener("click", ()=>{
-      alert(alphabetical(fruits));
+      result.append(alphabetical(fruits));
     });
   }
 }
