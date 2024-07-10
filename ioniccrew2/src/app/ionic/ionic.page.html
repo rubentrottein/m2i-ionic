@@ -10,18 +10,36 @@
       <ion-title size="large">Page : Ionic</ion-title>
     </ion-toolbar>
   </ion-header>
-  <article>
-    <h2>Exercice 1</h2>
-    <p>Une classe TS contient un constructeur, des propriétés et methodes et ses imports</p>
-  </article>
-  <article>
-    <h2>Exercice 2</h2>
-    <p>Un constructeur par défaut est un constructeur vide. Il permet d'hériter des méthodes natives d'une classe</p>
-  </article>
-  <article>
-    <h2>Exercice 3 et 4</h2>
-    <div id="result"></div>
-  </article>
-  <button id="activate" type="button">Trier les élements</button>
+  <section>
+    <h2 (click)="hide()">Exercices</h2>
+    <div id="exercices" class="hide">
+      <article>
+        <h3>Exercice 1</h3>
+        <p>Une classe TS contient un constructeur, des propriétés et methodes et ses imports</p>
+      </article>
+      <article>
+        <h3>Exercice 2</h3>
+        <p>Un constructeur par défaut est un constructeur vide. Il permet d'hériter des méthodes natives d'une classe</p>
+      </article>
+      <article>
+        <h3>Exercice 3 et 4</h3>
+        <div id="result"></div>
+      </article>
+      <button id="activate" type="button">Trier les élements</button>
+    </div>
+  </section>
+  <section>
+    <h2>Directives</h2>
+    <ion-label for="search">
+      Recherche par mot clé  
+      <form>
+        <ion-searchbar  id="search" (change)="searchContent()"></ion-searchbar>
+        <button>Rechercher</button>
+      </form>
+    </ion-label>
+    <ul>
+      <li *ngFor="let element of directives">{{ element.name }} : <span>{{ element.description }}</span></li>
+    </ul>
+  </section>
   <app-explore-container name="Exercices (Ionic)"></app-explore-container>
 </ion-content>

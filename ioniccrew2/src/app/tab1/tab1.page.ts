@@ -34,7 +34,6 @@ export class Tab1Page {
     return null;
   }
   
-  //sortedTab : String [] = this.alpha(this.testTab);
   sortedTab : String [] = this.alpha(this.testTab);
 
   firstChar = (string : String) :  any =>{

@@ -21,3 +21,26 @@ button{
     color: white;
     display: block;
 }
+.hide{
+    display: none;
+}
+li{
+    border: black 1px solid;
+    list-style-type: none;
+    text-align: center;
+    padding: .5em;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+li:nth-child(odd){
+    background: black;
+    color: white;
+}
+input{
+    display: block;
+    margin: 1em auto;
+    padding: .5em;
+    border: 1px solid;
+}
