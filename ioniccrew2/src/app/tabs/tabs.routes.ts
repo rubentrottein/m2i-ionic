@@ -33,6 +33,10 @@ export const routes: Routes = [
       {
         path: 'ionic',
         loadComponent: () => import('../ionic/ionic.page').then( m => m.IonicPage)
+      },
+      {
+        path: 'dialog',
+        loadComponent: () => import('../dialog/dialog.page').then( m => m.DialogPage)
       }
     ],
   },

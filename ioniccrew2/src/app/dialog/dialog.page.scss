@@ -1,0 +1,48 @@
+section{
+    color: whitesmoke;
+    opacity: 1;
+    transition: 1s;
+}
+input{
+    color: crimson;
+    margin: 1em auto;
+    display: block;
+}
+.fancy-name{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: crimson;
+    animation: blink 1s both infinite;
+    font-size: 5em;
+    margin: 2em auto;
+    text-align: center;
+}
+img{
+    position:fixed;
+    z-index: -1;
+    top:0;
+    left: 0;
+    height: 100%;
+}
+section{
+    background: rgba(0,0,0,.3);
+    backdrop-filter: blur(3px);
+}
+button{
+    padding: 1em;
+    display: block;
+    margin: 1em auto;
+    border-radius: .5em;
+    color: whitesmoke;
+    background: orangered;
+}
+.vanish{
+    opacity: 0;
+}
+@keyframes blink {
+
+    0%{color: seagreen;}
+    15%{color: steelblue;}
+    50%{color: orange;}
+    75%{color: red;}
+    100%{color: crimson;}
+}
