@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Ionic</ion-title>
+    <ion-title>{{ title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Page : Ionic</ion-title>
+      <ion-title size="large">{{ title }}</ion-title>
     </ion-toolbar>
   </ion-header>
   <section>
@@ -30,15 +30,33 @@
   </section>
   <section>
     <h2>Directives</h2>
-    <ion-label for="search">
-      Recherche par mot clé  
       <form>
-        <ion-searchbar  id="search" (change)="searchContent()"></ion-searchbar>
-        <button>Rechercher</button>
+        <h3>Type de Directives</h3>
+        <!--
+        <ion-label for="category">Catégorie</ion-label>
+          <ion-picker  name="category" [(ngModel)] = "category" id="category" >
+            <ion-picker-column value="default" >
+              <ion-picker-column-option value="default">Généralistes</ion-picker-column-option>
+              <ion-picker-column-option value="input">Saisie</ion-picker-column-option>
+              <ion-picker-column-option value="nav">Navigation</ion-picker-column-option>
+              <ion-picker-column-option value="style">Style</ion-picker-column-option>
+            </ion-picker-column>
+          </ion-picker>
+          -->
+          <ion-select  name="category" [(ngModel)] = "category" id="categorySelect" (ionChange)="selectTab()">
+              <ion-select-option value="default">Généralistes</ion-select-option>
+              <ion-select-option value="input">Saisie</ion-select-option>
+              <ion-select-option value="nav">Navigation</ion-select-option>
+              <ion-select-option value="style">Style</ion-select-option>
+          </ion-select>
+        <h3>Recherche par mot clé</h3>
+        <ion-label for="search">Mot clé</ion-label>
+        
+        <ion-searchbar  id="search"  [(ngModel)]="searchTerm" name="searchWord" (ionInput)="searchContent()"></ion-searchbar>
+        <!--<button (click)="searchContent()">Rechercher</button>-->
       </form>
-    </ion-label>
     <ul>
-      <li *ngFor="let element of directives">{{ element.name }} : <span>{{ element.description }}</span></li>
+      <li *ngFor="let element of directivesTab">{{ element.name }} : <span>{{ element.description }}</span></li>
     </ul>
   </section>
   <app-explore-container name="Exercices (Ionic)"></app-explore-container>
