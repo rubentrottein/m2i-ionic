@@ -1,6 +1,7 @@
 export class User {
+    id!: number;
     name! : String;
-    image! : Number; 
+    image! : Number;
+    title! : String;
     description! : String;
-
 }

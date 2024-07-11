@@ -1,39 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      TypeScript
-    </ion-title>
+    <ion-title>{{ title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" id="list">
     <ion-toolbar>
-      <ion-title size="large">TypeScript</ion-title>
+      <ion-title size="large">{{ title }}</ion-title>
     </ion-toolbar>
   </ion-header>
-  <article>
-    <h2>User Page</h2>
-    <figure *ngFor="let element of userTab">
-      <img src="https://picsum.photos/id/{{element.image}}/200/200" alt={{element.name}}>
-      <figcaption>
-        <h4>{{ element.name }}</h4>
-        <p>{{ element.description }}</p>
-      </figcaption>
-    </figure>
-  </article>
-  <!--
-  <ion-card>
-  <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-  <ion-card-header>
-    <ion-card-title>Card Title</ion-card-title>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-  </ion-card-header>
-
-  <ion-card-content>
-    Here's a small text description for the card content. Nothing more, nothing less.
-  </ion-card-content>
+  <section>
+      <h2>User Page</h2>
+      <div>
+        <figure *ngFor="let element of userTab" (click)="gotoAnchor(element.id)">
+          <img src="https://i.pravatar.cc/150?img={{element.image}}" alt={{element.name}}>
+          <figcaption>
+            <h4>{{ element.name }}</h4>
+          </figcaption>
+        </figure>
+      </div>
+  </section>
+<!---->
+  <ion-card *ngFor="let element of userTab" id="{{element.id}}" class="userCard">
+    <img alt="{{element.name}}" src="https://i.pravatar.cc/300?img={{element.image}}" />
+    <ion-card-header>
+      <ion-card-content class="description">{{ element.description }}</ion-card-content>
+      <ion-card-title>{{ element.name}}</ion-card-title>
+      <ion-card-subtitle>{{ element.title }}</ion-card-subtitle>
+    </ion-card-header>
+    <div class="buttons">
+      <button (click)="gotoAnchor(element.id-1)">Précédent</button>
+      <button (click)="gotoAnchor('list')">Retour à la liste des utilisateurs</button>
+      <button (click)="gotoAnchor(element.id+1)">Suivant</button>
+    </div>
 </ion-card>
-  -->
+ <!-- -->
   <app-explore-container name="TypeScript"></app-explore-container>
 </ion-content>

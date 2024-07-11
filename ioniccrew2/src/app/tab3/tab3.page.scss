@@ -1,12 +1,59 @@
+*{
+    scroll-behavior: smooth;
+}
 .ios .title-large{
     color: royalblue;
+}
+section{
+    min-height: 83dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 figure{
     background: radial-gradient(whitesmoke, white);
     border: 1px white solid;
-    backdrop-filter: blur(1px);
-    padding: 1em;
-    display: grid;
-    place-items: center;
-    border-radius: .5em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    background: #33333388;
+    color: white;
+
+}
+figure img{
+    border-radius: 10px 0 0 10px;
+    width: 20%;
+}
+figcaption h4{
+    margin-right: 1em;
+}
+.userCard{
+    min-height: 100dvh;
+    margin: auto;
+    padding-top: 5em;
+    width: 90%;
+    border: 1px solid white;
+    background: rgba(255,255,255,.6);
+    color: white;
+}
+.userCard img{
+    width: 100%;
+    object-fit: cover;
+    height:10vh;
+    border-radius: 1em 1em 0 0;
+    transition: .5s;
+}
+.userCard .card-header{
+    border-top: 1px black solid;
+}
+.userCard .description{
+    font-size: 1.2rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    color: darkslategray;
 }
