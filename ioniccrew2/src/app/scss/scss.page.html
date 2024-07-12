@@ -10,10 +10,22 @@
       <ion-title size="large">scss</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+  <article>
+    <h2>Servir l'app Node du projet D.A.N</h2>
+    <figure *ngFor="let article of articles">
+      <img src="{{article.img}}" alt="Illustration">
+      <figcaption>
+        <h4>{{article.title}}</h4>
+      </figcaption>
+    </figure>
+  </article>
   <article>
     <h2>Un peu de Rhodes pour la route</h2>
     <iframe src="https://www.youtube.com/embed/5gyJprXb5Rs?si=1nMI7gfGAGXewkuQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </article>
+  <article>
+    <h2>On a trop nest</h2>
+    <iframe src="http://127.0.0.1:8001/" frameborder="0"></iframe>
   </article>
   <article>
     <h3>Ressources</h3>
