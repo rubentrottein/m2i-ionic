@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 864 792" version="1.1" viewBox="0 0 864 792" xmlns="http://www.w3.org/2000/svg">
+ <style type="text/css">.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;} .st1{fill:#F7941E;} .st2{stroke:#000000;stroke-miterlimit:10;} .st3{stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;} .st4{fill:#E5CAE1;} .st5{fill:#FBB040;} .st6{fill:#FFD22C;}</style>
+ <path class="st0" d="m751.8 198.1"/>
+ <path class="st1" d="m639.3 430.3l8.6 11.5v-19.6l6.2 5.2 15.3 12.7s9.2 18.6 9.2 0-30.7-44.1-30.7-44.1h3.3s-37.2 25.5-37.2 44.1 11.1 0 11.1 0l26.1-17.9v19.6"/>
+ <line class="st1" x1="549.9" x2="568.5" y1="543.1" y2="476.2"/>
+ <polygon class="st1" points="647.8 441.8 654 427.4 639.3 422.2"/>
+ <path class="st1" d="m410.2 440.1l8.6 11.5v-19.6l6.2 5.2 15.3 12.7s9.2 18.6 9.2 0-30.7-44.1-30.7-44.1h3.3s-37.2 25.5-37.2 44.1 11.1 0 11.1 0l26-17.9v19.6"/>
+ <path class="st2" d="m712 568.6c9.7-242.8-0.3-456.6-244.3-456.6-281.7-0.1-266.7 259.4-265.8 461.1 0.7 133.1 504.7 128.5 510.1-4.5z"/>
+ <path class="st0" d="m460.3 651.2c122.2 9 231-78.4 231-78.4s15.5-291.4-58.7-372.5-172.3-8.9-172.3-8.9h0.9s-97.4-72.2-170.9 8.9-58.2 372.5-58.2 372.5 107.9 87.4 229.1 78.4"/>
+ <path class="st2" d="m672.7 279.1s187.5 152.8 108.7 239.7c0 0-29.1 40.5-73.5-8.4l-35.2-231.3z"/>
+ <path class="st2" d="m238.5 279.1s-177 152.8-102.6 239.7c0 0 27.5 40.5 69.4-8.4l33.2-231.3z"/>
+ <ellipse class="st3" cx="432.6" cy="292.4" rx="7" ry="7.7"/>
+ <ellipse class="st3" cx="482.5" cy="292.4" rx="7" ry="7.7"/>
+ <ellipse class="st4" cx="396.8" cy="339.8" rx="28.3" ry="31.2"/>
+ <ellipse class="st4" cx="514.4" cy="339.8" rx="28.3" ry="31.2"/>
+ <path class="st5" d="m459.3 299s-28.5 31.2-28.5 43.7 28.5 49.9 28.5 49.9l25.8-39c0-0.1-18.4-63.1-25.8-54.6z"/>
+ <polygon class="st6" points="462.7 328.3 475.9 344.7 469.3 362.4"/>
+ <line class="st1" x1="572.3" x2="661.1" y1="445.4" y2="680"/>
+</svg>

@@ -1,0 +1,7 @@
+{
+  "name": "Tout-Doux Liste",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

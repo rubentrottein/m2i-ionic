@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'woolymood';
+    src: url("../../assets/font/woolymood/WoolymoodDemoRegular.ttf");
+}
+@font-face {
+    font-family: 'Woolwich';
+    src: url("../../assets/font/dk_woolwich/DK\ Woolwich.otf");
+}
+@font-face {
+    font-family: 'Softie';
+    src: url("../../assets/font/softie/SoftieFont-Regular.ttf");
+}
+@font-face {
+    font-family: 'SoftCore';
+    src: url("../../assets/font/soft_core/Soft\ Core.ttf");
+}
+.taskTitle{
+    font-family: "Softie";
+    font-size: 1,5em;
+}
+.title{ color: black; font-family: 'WoolWich', monospace; font-size: 2em;}
+.taskIcon, .task svg{
+    width: 10dvmin;
+    height: 10dvmin;
+    border-radius: 50%;
+}
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid coral;
+    margin: 1em;
+    border-radius: 10px;
+    background: rgba(255,255,255, .5);
+    color: salmon;
+
+}
+#add{
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    border-radius: 50%;
+    background: lime;
+}
+.listSummary{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ion-padding::part(background){
+    --background: url("../../assets/background/bg.jpg") fixed;
+    background-size: cover;
+}
+.taskIcon, .task{
+    border: 1px solid pink;
+    padding: 0;
+    margin: auto;
+}
+.task>*{
+    text-align: center;
+}
+.taskTitle{
+    max-width: 100%;
+}
+ion-list{
+    border-radius: 10px;
+}
+.done{
+    font-style: italic;
+    color: pink;
+    text-decoration: line-through;
+}

@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'woolymood';
+    src: url("../assets/font/woolymood/WoolymoodDemoRegular.ttf");
+}
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.title{ color: black; font-family: monospace, 'woolymood'; font-size: 2em;}
+.taskIcon, .task svg{
+    width: 10dvmin;
+    height: 10dvmin;
+    border-radius: 50%;
+}
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border: 1px solid coral;
+    margin: 1em;
+    border-radius: 10px;
+    background: rgba(255,255,255, .5);
+    color: salmon;
+
+}
+#add{
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    border-radius: 50%;
+    background: lime;
+}
+.listSummary{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,3 +1,37 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <h1 class="title">{{ title }}</h1>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title class="title">{{ title }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-header [translucent]="true" collapse="condense">
+      <ion-item id="listSummary">
+        <ion-badge slot="end">{{ list.length }}</ion-badge>
+        <ion-label>
+          <ion-title class="title">{{ title }}</ion-title>
+        </ion-label>
+      </ion-item>
+    </ion-header>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Tâches en cours</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let i of list" class="task">
+        <ion-checkbox type="checkbox" labelPlacement="start" />
+        <ion-label class="taskTitle" >{{ i.title }}</ion-label>
+        <img alt="Icône de tâche" src="../assets/icon/icon ({{i.icon}}).svg" class="taskIcon" />
+        <ion-icon name="minus"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-buttons>
+      <ion-fab>
+        <ion-fab-button id="add">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-buttons>
+  </ion-content>
 </ion-app>
