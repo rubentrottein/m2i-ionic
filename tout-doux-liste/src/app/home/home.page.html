@@ -1,63 +1,40 @@
-<!--
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Inbox
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-  
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">
-        Inbox
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
-  </ion-list>
-</ion-content>
-
--->
-
 <ion-app>
-  <h1 class="title">{{ title }}</h1>
-  <ion-header [translucent]="true">
+  <ion-header [translucent]="false">
     <ion-toolbar>
       <ion-title class="title">{{ title }}</ion-title>
+      <ion-badge slot="end">{{ toDoList.length }}</ion-badge>
     </ion-toolbar>
   </ion-header>
 
   <ion-content [fullscreen]="true" class="ion-padding">
     <ion-header [translucent]="true" collapse="condense">
-      <ion-item id="listSummary">
-        <ion-badge slot="end">{{ toDoList.length }}</ion-badge>
-        <ion-label>
-          <ion-title class="title">{{ title }}</ion-title>
-        </ion-label>
-      </ion-item>
+      <ion-toolbar>
+        <ion-title class="title">{{ title }}</ion-title>
+        <ion-item >
+          <ion-badge slot="end" class="iosOnly">{{ toDoList.length }}</ion-badge>
+        </ion-item>
+      </ion-toolbar>
     </ion-header>
     <ion-list>
       <ion-list-header>
         <ion-label>Tâches en cours</ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let i of toDoList" class="task">
-        <ion-checkbox type="checkbox" labelPlacement="start" 
-          [checked]="i.done"
-          [class.done]="i.done"
-          [checked]="i.done"
+      <ion-item-sliding *ngFor="let todo of toDoList | tasksFilter">
+        <ion-item-options color='warning' side="start" (ionSwipe)="deleteTask(todo)">
+          <ion-item-option expandable (click)="deleteTask(todo)">Archiver</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item *ngFor="let todo of toDos" class="task">
+        <ion-checkbox type="checkbox" labelPlacement="start" name="checkbox"
           (ionChange)="saveTasks()"
+          [class.done]="todo.done"
+          [checked]="todo.done"
         />
-        <ion-label class="taskTitle" >{{ i.title }}</ion-label>
-        <img alt="Icône de tâche" src="../assets/icon/icon ({{i.icon}}).svg" class="taskIcon" />
-        <ion-icon name="close-outline" (click)="deleteTask()" [(ngModel)]="task"></ion-icon>
+        <ion-label class="taskTitle">{{ todo.title }}</ion-label>
+        <img alt="Icône de tâche" src="../assets/icon/icon ({{todo.icon}}).svg" class="taskIcon" />
+        <ion-item (click)="deleteTask(todo)" [(ngModel)]="task">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-item>
       </ion-item>
     </ion-list>
     <hr>
@@ -65,21 +42,35 @@
       <ion-list-header>
         <ion-label>Tâches terminées</ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let todo of toDoArchive" class="task">
-        <ion-checkbox type="checkbox" labelPlacement="start" [checked]="todo.done"/>
-        <ion-label class="taskTitle" >{{ todo.title }}</ion-label>
-        <img alt="Icône de tâche" src="../assets/icon/icon ({{todo.icon}}).svg" class="taskIcon" />
-        <ion-icon name="close-outline" (click)="deleteTask()" [(ngModel)]="task"></ion-icon>
-      </ion-item>
+      <ion-item-sliding *ngFor="let todo of toDoArchive">
+        <ion-item class="task">
+          <ion-checkbox type="checkbox" labelPlacement="start" checked/>
+          <ion-label class="taskTitle" >{{ todo.title }}</ion-label>
+          <img alt="Icône de tâche" src="../assets/icon/icon ({{todo.icon}}).svg" class="taskIcon" />
+          <!--
+            <ion-icon name="close-outline" (click)="deleteTask()" [(ngModel)]="task"></ion-icon>
+          -->
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color='danger' expandable>Supprimer</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
     </ion-list>
     <ion-item>
-      <ion-input [ngModel]='task' (change)="addTask(task.title,'')"></ion-input>
+      <ion-input name="newTask" type="text"
+        [(ngModel)]="task"
+        (ionBlur)="addTask('')"
+        (keydown)="keyDetection($event.code)"
+        placeholder="Ajouter une tâche..."></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input name="addNewTask" [ngModel]='task' (change)="addTask('')"></ion-input>
     </ion-item>
   </ion-content>
   <ion-buttons>
     <ion-fab>
       <ion-fab-button id="add">
-        <ion-icon name="add" (click)="addTask('', 'click')"></ion-icon>
+        <ion-icon name="add" (click)="addTask('click')"></ion-icon>
       </ion-fab-button>
     </ion-fab>
   </ion-buttons>
