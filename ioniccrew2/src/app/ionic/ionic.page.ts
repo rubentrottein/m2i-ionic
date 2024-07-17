@@ -15,28 +15,8 @@ import { directives, directivesNavigation, directivesSaisie, directivesStyle } f
 
 export class IonicPage implements OnInit {
 
-  ngOnInit() {
-    const result = document.querySelectorAll("#result")[0];
-    const fruits = ["Pomme", "Banane", "Mirabelle", "Coing"];
+  ngOnInit() {}
     
-    function alphabetical(tab : String[]){
-      let p = document.createElement("p");
-      for(let fruit of tab.sort()){
-        p.innerHTML += "<hr>" + fruit;
-      }
-      return p;
-    }
-
-    result.innerHTML += fruits.join( " - " );
-    document.querySelectorAll("#activate")[0].addEventListener("click", ()=>{
-      result.append(alphabetical(fruits));
-    });
-  }
-
-  hide(){
-    document.querySelectorAll("#exercices")[0].classList.toggle("hide");
-    document.querySelectorAll("#exercices")[0].classList.toggle("open");
-  }
 
   title = "Index des directives Ionic";
 
@@ -63,13 +43,13 @@ export class IonicPage implements OnInit {
   }
 
   cleanString(stringToClean : string){
-    stringToClean=stringToClean.toLowerCase()
-    return stringToClean.trim()
+    stringToClean=stringToClean.toLowerCase();
+    return stringToClean.trim();
   }
   ngInit(){
     document.querySelectorAll("#category")[0].addEventListener("change", ()=>{
-      this.selectTab()
-      console.log(document.querySelectorAll("#category")[0])
+      this.selectTab();
+      console.log(document.querySelectorAll("#category")[0]);
     });
   }
 }

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Angular
+      {{ title }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,29 +12,70 @@
       <ion-title size="large">Angular</ion-title>
     </ion-toolbar>
   </ion-header>
-  <h2>Exercices d'affichage</h2>
-
-  <article>
-    <h3>Affichage d'un simple texte</h3>
-    {{testString}}
-  </article>
-  
-  <article>
-    <h3>Premier caractère de Bonjour</h3>
-    <div>{{ first }}</div>
-  </article>
-  
-  <article >
-    <h3>Affichage d'un Array</h3>
-    <aside *ngFor="let element of testTab">
-      {{ element }}
-    </aside>
-  </article>
-  <article >
-    <h3>Affichage d'un Array Trié</h3>
-    <aside *ngFor="let elt of sortedTab">
-      {{ elt }}
-    </aside>
-  </article>
+  <section>
+    <h2 (click)="hide('#display')">Exercices d'affichage</h2>
+    <ion-accordion-group id="display">
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>
+            <h3>Affichage d'un simple texte</h3>
+          </ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">{{testString}}</div>
+      </ion-accordion>
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>
+            <h3>Premier caractère de Bonjour</h3>
+          </ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">Retour de la fonction first() : <span class="answer">{{ first }}</span></div>
+      </ion-accordion>
+      <ion-accordion value="third">
+        <ion-item slot="header" color="light">
+          <ion-label><h3>Affichage d'un Array</h3></ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <aside *ngFor="let element of testTab">
+          {{ element }}
+          </aside>
+        </div>
+      </ion-accordion>
+      <ion-accordion value="fourth">
+        <ion-item slot="header" color="light">
+          <ion-label><h3>Affichage d'un Array Trié</h3></ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <p class="answer">Array après le tri</p>
+          <aside *ngFor="let elt of sortedTab">
+            {{ elt }}
+          </aside>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </section>
+  <section>
+    <h2 (click)="hide('#definitions')">Exercices de définitions</h2>
+    <div id="definitions" class="hide">
+      <article>
+        <h3>Exercice 1</h3>
+        <p class="answer">Une classe TS contient un constructeur, des propriétés et methodes et ses imports</p>
+      </article>
+      <article>
+        <h3>Exercice 2</h3>
+        <p class="answer">Un constructeur par défaut est un constructeur vide. Il permet d'hériter des méthodes natives d'une classe</p>
+      </article>
+    </div>
+  </section>
+  <section>
+    <h2 (click)="hide('#tri')">Exercices de tri (Array)</h2>
+    <div id="tri" class="hide">
+      <article>
+        <h3>Exercice 3 et 4</h3>
+        <div id="result"></div>
+      </article>
+      <button id="activate" type="button">Trier les élements</button>
+    </div>
+  </section>
   <app-explore-container name="Exos d'affichage (Angular)"></app-explore-container>
 </ion-content>

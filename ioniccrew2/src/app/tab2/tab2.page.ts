@@ -90,6 +90,7 @@ export class Tab2Page {
     }
 
     function getPkmn(pkmn : String){
+      document.querySelectorAll("#displayPkmn")[0].innerHTML="";
       document.querySelectorAll("#displayPkmn")[0].append(createFigure(pkmn));
     }
     

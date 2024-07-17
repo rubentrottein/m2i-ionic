@@ -12,18 +12,7 @@ article{
 h2{
     color: darkgoldenrod;
 }
-button{
-    margin: auto;
-    padding: 1em 2em;
-    font-size: 1.2em;
-    background: rebeccapurple;
-    border-radius: 1em;
-    color: white;
-    display: block;
-}
-.hide{
-    display: none;
-}
+
 ul{padding: 0;}
 li{
     border: black 1px solid;
@@ -48,5 +37,15 @@ input{
     padding: .5em;
     border: 1px solid;
 }
-.open::after{content:"🔻";}
-.closed::after{content:"🔺";}
+.open::before{content:"🔻"; position: fixed; top:0; left:0;}
+.closed::before{content:"🔺"; position: fixed; top:0; left:0;}
+
+section{
+    padding: 1em;
+    min-height: 100dvh;
+}
+#categorySelect{
+    margin: auto;
+    background: #eee;
+    color: black;
+}

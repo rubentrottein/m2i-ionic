@@ -7,7 +7,7 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 interface Article {
   // Define the properties of an Article based on your data model
   title: string;
-  img : "https://picsum.photos/500";
+  image : string;
 }
 
 @Component({
