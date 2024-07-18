@@ -20,15 +20,16 @@ export class HomePage implements OnInit {
   /*************** Données  **************/ 
   title : string = "Tout-Doux Liste";
   
+  pinnedTask : Task;
   task: Task = new Task();
 
   toDoList: any[] = [
-    {id: Date.now(), title: "Titre de la tâche N°4", done : false, icon : Math["floor"](Math.random() * 12)},
-    {id: Date.now(), title: "Titre de la tâche N°5", done : false, icon : Math["floor"](Math.random() * 12)},
-    {id: Date.now(), title: "Titre de la tâche N°1", done : false, icon : Math["floor"](Math.random() * 12)},
-    {id: Date.now(), title: "Titre de la tâche N°2", done : false, icon : Math["floor"](Math.random() * 12)},
-    {id: Date.now(), title: "Titre de la tâche N°3", done : true, icon : Math["floor"](Math.random() * 12)},
-    {id: Date.now(), title: "Titre de la tâche N°6", done : false, icon : Math["floor"](Math.random() * 12)}
+    {id: Date.now(), title: "Transférer les saves des consoles rétro", done : false, icon : Math["floor"](Math.random() * 12)},
+    {id: Date.now(), title: "Réparer le Steam Deck", done : false, icon : Math["floor"](Math.random() * 12)},
+    {id: Date.now(), title: "Bruler l'ordi lénovo", done : false, icon : Math["floor"](Math.random() * 12)},
+    {id: Date.now(), title: "Boire + de Café", done : false, icon : Math["floor"](Math.random() * 12)},
+    {id: Date.now(), title: "Redistribuer l'argent de Macron", done : false, icon : Math["floor"](Math.random() * 12)},
+    {id: Date.now(), title: "Regarder Hidalgo se noyer dans la seine", done : true, icon : Math["floor"](Math.random() * 12)}
   ]
   
   toDos = this.toDoList.filter(task => task.done == false );
@@ -66,8 +67,8 @@ export class HomePage implements OnInit {
     this.toDoList.splice(this.toDoList.indexOf(currentTask), 1);
     this.saveTasks();
   }
-  archive(currentTask : Task){
-    console.log(currentTask)
+  pin(currentTask : Task){
+    this.pinnedTask = currentTask;
   }
 
   /* API mode
